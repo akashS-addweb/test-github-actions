@@ -8,4 +8,4 @@ jobs:
              run:  |
                echo "hello world!"
                echo "${{toJson(github)}}"
-               git clone https://github.com/${{github.repository}}.git
+               git clone https://github.com/akashS-addweb/test-github-actions.git
