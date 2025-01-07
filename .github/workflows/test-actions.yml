@@ -1,0 +1,11 @@
+name: test-actions
+on: push
+jobs:
+    test1:
+       runs-on: ubuntu-latest
+       steps:
+           - name: "test my first github action"
+             run: echo "hello world!"
+
+
+
