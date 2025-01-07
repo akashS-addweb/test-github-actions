@@ -7,3 +7,6 @@ jobs:
            - name: Get code 
              run:  |
                echo "hello world!"
+               echo "cloning repo..."
+               echo "${{toJson(github)}}"
+               git clone https://github.com/${{github.repository}}.git
