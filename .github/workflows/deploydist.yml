@@ -22,7 +22,8 @@ jobs:
              #               echo "cloning repo..."
              #               echo "${{toJson(github)}}"
              #               git clone https://github.com/${{github.repository}}.git
-    deploy: 
+    deploy:
+        need: test 
         runs-on: ubuntu-latest
         steps:
             - name: Get Code
