@@ -63,14 +63,14 @@ jobs:
     deploy:
         needs: build
         runs-on: ubuntu-latest
-        steps:
-            - name: Deploy Github pages
-              id: deployment
-              uses: actions/deploy-pages@v4
-              with:
-                token: ${{ secrets.GITHUB.TOKEN }}
-            - name: Deploy
-              run: echo "Deploy Successfully"
+          #        steps:
+          #            - name: Deploy Github pages
+          #              id: deployment
+          #              uses: actions/deploy-pages@v4
+          #              with:
+          #                token: ${{ secrets.GITHUB.TOKEN }}
+          #            - name: Deploy
+          #              run: echo "Deploy Successfully"
         permissions:
           pages: write
           id-token: write
@@ -78,6 +78,13 @@ jobs:
         environment:
           name: github-pages
           url: ${{ steps.deployment.outputs.page_url }}
+
+        steps:
+          - name: Deploy to Github Pages
+            id: deployment
+            uses: actions/deploy-pages@v4
+            with:
+                token: ${{secrets.GITHUB_TOKEN}}
 
              
 
