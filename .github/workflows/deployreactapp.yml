@@ -68,7 +68,7 @@ jobs:
               id: deploymnet
               uses: actions/deploy-pages@v4
               with:
-                token: ${{secrets.GITHUB.TOKEN}}
+                token: ${{ secrets.GITHUB.TOKEN }}
             - name: Deploy
               run: echo "Deploy Successfully"
         permissions:
