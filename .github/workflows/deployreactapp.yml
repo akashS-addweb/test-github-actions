@@ -1,4 +1,4 @@
-name: deploy-Dist-actions
+name: deploy-React-actions
   #on: [push,workflow_dispatch]
 on:
     push:
