@@ -20,4 +20,3 @@ test('contains an h2 element', () => {
   const h2Element = container.querySelector('h2');
   expect(h2Element).toBeInTheDocument();
 });
-// this is Test
