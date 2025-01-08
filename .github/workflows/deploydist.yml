@@ -5,9 +5,9 @@ on:
         branches:
             - main
 
-        paths-ignore:
-            - '.github/workflows/*'
-            - README.md
+              #        paths-ignore:
+              #            - '.github/workflows/*'
+              #            - README.md
 
     workflow_dispatch:
 jobs:
