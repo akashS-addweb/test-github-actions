@@ -23,7 +23,7 @@ jobs:
              #               echo "${{toJson(github)}}"
              #               git clone https://github.com/${{github.repository}}.git
     deploy:
-        need: test 
+      needs: test 
         runs-on: ubuntu-latest
         steps:
             - name: Get Code
