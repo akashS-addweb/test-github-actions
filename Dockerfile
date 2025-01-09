@@ -1,6 +1,6 @@
 FROM nginx
 MAINTAINER akash.s@addwebsolution.in
-RUN apt update -y && apt install -y apache2 \
+RUN apt update  && apt install  apache2 \
    zip \
    unzip \
    wget
@@ -13,3 +13,4 @@ RUN rm -rf little-fashion.zip 2127_little_fashion
 RUN service apache2 start
 RUN service apache2 start
 EXPOSE 80
+CMD ["npm", "start"]
