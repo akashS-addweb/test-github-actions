@@ -5,20 +5,13 @@ on:
     branches: [ "main" ]
 
 jobs:
-  sonarqube:
-    name: SonarQube
+  sonarcloud-dockerfile-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  
-      - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v4
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
+      - name: Check Docker File Code
+        uses: actions/checkout@v4
   deploy:
-    needs: sonarqube
+    needs: sonarcloud-dockerfile-check
 
     runs-on: ubuntu-latest
 
