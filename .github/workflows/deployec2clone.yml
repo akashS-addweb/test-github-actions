@@ -23,6 +23,6 @@ jobs:
           ssh -o StrictHostKeyChecking=no ubuntu@3.111.40.52 << 'EOF'
             cd /home/ubuntu/git-clone-action || git clone https://github.com/akashS-addweb/test-github-actions.git /home/ubuntu/git-clone-action
             cd /home/ubuntu/git-clone-action
-            #            git pull origin main
+            git pull origin main
           EOF
 
