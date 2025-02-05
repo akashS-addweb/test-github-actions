@@ -28,12 +28,29 @@ jobs:
 
 
 
+            #      - name: Deploy to EC2
+            #        run: |
+            #          ssh -o StrictHostKeyChecking=no ubuntu@3.111.40.52 << 'EOF'
+            #            if [ ! -d "/home/ubuntu/git-clone-action" ]; then
+            #              git clone https://github.com/akashS-addweb/test-github-actions.git /home/ubuntu/git-clone-action
+            #            fi
+            #            cd /home/ubuntu/git-clone-action
+            #            git pull origin main
+            #          EOF
+
+
+
       - name: Deploy to EC2
         run: |
+          # SSH into EC2 and deploy
           ssh -o StrictHostKeyChecking=no ubuntu@3.111.40.52 << 'EOF'
-            if [ ! -d "/home/ubuntu/git-clone-action" ]; then
-              git clone https://github.com/akashS-addweb/test-github-actions.git /home/ubuntu/git-clone-action
+            # Check if the directory exists
+            if [ ! -d "/home/ubuntu/git-clone-action/.git" ]; then
+              # Clone the repo if the directory doesn't exist or isn't a git repo
+              git clone https://github.com/akashS-addweb/test-github-actions.git /home/ubuntu/git-clone-action/.git
             fi
-            cd /home/ubuntu/git-clone-action
+            cd /home/ubuntu/git-clone-action/.git
             git pull origin main
-          EOF      
+            # Add additional deployment steps as needed (e.g., npm install, etc.)
+          EOF
+          
