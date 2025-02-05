@@ -25,4 +25,5 @@ jobs:
             git clone https://github.com/akashS-addweb/test-github-actions.git /home/ubuntu/clone
             cd /home/ubuntu/clone
             git pull origin main
+            rm -rf /home/ubuntu/clone/.github
           EOF
