@@ -47,9 +47,9 @@ jobs:
             # Check if the directory exists
             if [ ! -d "/home/ubuntu/git-clone-action/.git" ]; then
               # Clone the repo if the directory doesn't exist or isn't a git repo
-              git clone https://github.com/akashS-addweb/test-github-actions.git /home/ubuntu/git-clone-action/.git
+              git clone https://github.com/akashS-addweb/test-github-actions.git /home/ubuntu/git-clone-action
             fi
-            cd /home/ubuntu/git-clone-action/.git
+            cd /home/ubuntu/git-clone-action
             git pull origin main
             # Add additional deployment steps as needed (e.g., npm install, etc.)
           EOF
