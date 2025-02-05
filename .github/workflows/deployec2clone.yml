@@ -21,9 +21,9 @@ jobs:
       - name: Deploy to EC2
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@3.111.40.52 << 'EOF'
-            cd /home/ubuntu/git-clone-action 
-            git clone https://github.com/akashS-addweb/test-github-actions.git /home/ubuntu/git-clone-action
-            cd /home/ubuntu/git-clone-action
+            cd /home/ubuntu/clone
+            git clone https://github.com/akashS-addweb/test-github-actions.git /home/ubuntu/clone
+            cd /home/ubuntu/clone
             git pull origin main
           EOF
 
